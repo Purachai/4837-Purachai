@@ -2,68 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed and feedrate</title>
-    <script>
-        function SPEEDRATE() {
-            let D = parseFloat(document.getElementById("D").value);
-            let n = parseFloat(document.getElementById("n").value);
-            let Vc = (3.14159265 * D * n) / 1000;
-            document.getElementById("SPEEDRATE").value = Vc.toFixed(3);
-        }
-    </script>
-    <script>
-        function FEEDRATE() {
-            let fz = parseFloat(document.getElementById("FEED PER TOOTH").value);
-            let Zn = parseFloat(document.getElementById("NUMBER OF TEETH").value);
-            let n1 = parseFloat(document.getElementById("n1").value);
-            let Vf = (fz * Zn *n1);
-            document.getElementById("FEED RATE").value = Vf.toFixed(3);
-        }
-        alert("สรุป APE 122");
-    </script>
+    <title>Speed and feed rate</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <style>
-        .head{
+        .head {
+            text-align: center;
             background-color:#7e62fcd8;
             font-family: 'Itim', cursive;
-
-            margin: 50px;
+            margin: 30px;
             border-radius: 50px;
-            width: 400px;
+            width: 450px;
             height: 60px;
         }
-        .container{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .Calculator{
+        
+        .cal1 {
+            font-family: 'Itim', cursive;
             width: 350px;
             height: 380px;
             border: 10px solid #f64c90d8;
             border-radius: 20px;
             background-color:  #e0d90bd5;
-            padding: 15px;
+            padding: 10px;
             margin: 20px;
+            align-items: center;
+           }
+          
+        .cal2 {
             font-family: 'Itim', cursive;
-        }
-        .Calculator h1{
-            text-align: center;
-        }
-        .Calculator input{
+            width: 350px;
+            height: 380px;
+            border: 10px solid #f64c90d8;
+            background-color:  #e0d90bd5;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 20px;
+            align-items: center;
+           }
+        
+        .cal1 h1 {
+               text-align: center;
+               font-family: 'Itim', cursive;
+           }
+        
+        .cal2 h1{
+               text-align: center;
+               font-family: 'Itim', cursive;
+            }
+        
+        
+        .cal1 input {
+               background-color: #e0162ed7;
+               border-radius:20px;
+               font-family: 'Itim', cursive;
+               height: 20px;
+           }
+        
+        .cal2 input {
             background-color: #e0162ed7;
             border-radius:20px;
-            height: 20px;
             font-family: 'Itim', cursive;
+            height: 20px;
         }
-        .Calculator button{
+
+        .cal1 button{
             background-color: #5d0be0d5;
             padding: 13px;
             font-family: 'Itim', cursive;
+            border-radius: 20px;
+         }  
+            
+        .cal2 button{
+            background-color: #5d0be0d5;
+            padding: 13px;
+            font-family: 'Itim', cursive;
+            border-radius: 20px;
         }
+        
+        
+       .container {
+            justify-content: center;
+            display:flex;
+            flex-wrap: wrap;
+        }
+
+        body{
+            background-color: #62e001dc
+        }
+
         h1{
-            font-size: 20px;
+            font-size: 28px;
             text-align: center;
             color: rgb(0, 0, 0);
             font-family: 'Itim', cursive;
@@ -74,62 +103,108 @@
             color:rgb(0, 0, 0);
             padding: auto;
         }
-        body{
-            background-color: #62e001dc
-        }
 
         input{
             margin: 10px;
         }
+        .menu{
+            background-color: #7e62fcd8;
+            border-radius: 50px;
+            margin: 50px;
+            padding: 20px 20px 55px;
+            width: 125px;
+            height: 30px;
+            text-align: center;
+        }
+        .menu a{
+            display: block;
+            float: center;
+            padding: 20px 10px 5px;
+            text-decoration: none;
+            transition: all 100ms ease;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-family: 'Itim', cursive;
+        }
+        .menu a:hover{
+            background-color: #ad9affd8;
+            border-radius: 50px;
+            padding: 15px;
+            height: 30px;
+        }
     </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">    
+
+    <script>
+        alert("สรุป APE 122");
+    </script>
+
+    <!-- java speed rate -->
+    <script>
+        function speedrate() {
+            let D = parseFloat(document.getElementById("diameter").value);
+            let n = parseFloat(document.getElementById("ความเร็วรอบ").value);
+            let Vc = (3.14159265 * D * n) / 1000;
+            document.getElementById("speedrate").value = Vc.toFixed(2);
+        }
+    </script>
+
+    <!-- java feed rate  -->
+    <script>
+        function feedrate() {
+            let fz = parseFloat(document.getElementById("feedpertooth").value);
+            let z = parseFloat(document.getElementById("numberoftooth").value);
+            let n2 = parseFloat(document.getElementById("ความเร็วรอบ1").value);
+            let Vf = (fz * z *n2);
+            document.getElementById("feedrate").value = Vf.toFixed(2);
+        }
+    </script>
+
 </head>
+
+
 <body>
-    <center><div class="head">
-        <h2><r><u>Speed and feedrate</u></r>
-        </h2> </center>
+   
+    <center><div class="head"><h2><r><u>Speed and Feed rate</u></r></h2></div></center>
+    
+    <div class="container">
+
+    <!-- เครื่องคิด cutting speed -->
+    <div class="cal1">
+        <u><h1>Speed Rate</h1></u>
+        <label for="" style="margin-left: 15px;">Spindle Speed (n)</label><br>
+        <input type="text" name="" id="ความเร็วรอบ" size="15px"> (rev/min)
+        <br>
+        <label for="" style="margin-left: 15px;">Cutter Diameter (D)</label><br>
+        <input type="text" name="" id="diameter" size="15px"> (mm)
+        <br>
+        <label for="" style="margin-left: 15px;" class="s1">Speed Rate (Vc)</label><br>
+        <input type="text" name="" id="speedrate" size="15px"> (m/min)
+        <br><br><br> &nbsp; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button  onclick="speedrate()">Enter</button>
+    </div>
+    
+       
+    <!-- เครื่องคิด feed -->
+    <div class="cal2">
+        <h1><u>Feed Rate</u></h1>
+        <label for="" style="margin-left: 15px;">Feed Per Tooth (fz)</label><br>
+        <input type="text" name="" id="feedpertooth" size="15px"> (mm/tooth)
+        <br>
+        <label for="" style="margin-left: 15px;">Number Of Teeth (z)</label><br>
+        <input type="text" name="" id="numberoftooth" size="15px">
+        <br>
+        <label for="" style="margin-left: 15px">Spindle Speed (n)</label><br>
+        <input type="text" name="" id="ความเร็วรอบ1" size="15px"> (rev/min)
+        <br>
+        <label for="" style="margin-left: 15px;" class="F">Feed Rate (Vf)</label><br>
+        <input type="text" name="" id="feedrate" size="15px"> (mm/min)
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="feedrate()">Enter</button>
+    </div>
     </div>
 
-  <div class="container">
-    <!-- SPEED RATE -->
-    <div class="Calculator">
-        <h1><u>SPEED RATE</u></h1>
-        <label for="" style="margin-left: 20px;">Spindle Speed (n)</label>
-        <br>
-        <input type="text" name="" id="n" size=""> (rev/min)
-        <br>
-        <label for="" style="margin-left: 20px;">Cutter Diameter (D) (D)</label>
-        <br>
-        <input type="text" name="" id="D" size=""> (mm)
-        <br>
-        <label for="" style="margin-left: 20px;">Speed Rate (Vc)</label>
-        <br>
-        <input type="text" name="" id="Speed Rate " size=""> (m/min)
-        <br><br><br> &nbsp; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="SPEEDRATE()">ENTER</button>
-    </div>
-    <!-- FEED RATE -->
-    <div class="Calculator">
-        <h1><u>FEED RATE</u></h1>
-        <label for="" style="margin-left: 20px;">Feed Per Tooth (fz)</label>
-        <br>
-        <input type="text" name="" id="Feed Per Tooth" size=""> (mm/tooth)
-        <br>
-        <label for="" style="margin-left: 20px;">Number Of Teeth (z)</label>
-        <br>
-        <input type="text" name="" id="Number Of Teeth" size="">
-        <br>
-        <label for="" style="margin-left: 20px;">Spindle Speed (n)</label>
-        <br>
-        <input type="text" name="" id="n1" size=""> (rev/min)
-        <br>
-        <label for="" style="margin-left: 20px;">Feed Rate (Vf)</label>
-        <br>
-        <input type="text" name="" id="Feed Rate " size=""> (mm/min)
-        <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="botton2" onclick="FEEDRATE()">ENTER</button>
-    </div>
-  </div>
+<center><div class="menu"><a href="index.html">หน้าแรก</a></div></center>
+
 </body>
 </html>

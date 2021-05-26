@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>63070504837</title>
+    <style>
+        .TriArea {
+            width: 350px;
+            height: 380px;
+            border: 10px solid rgb(30, 170, 151);
+            border-radius: 50px;
+            background-color: rgb(83, 167, 179);
+            padding: 20px;
+            margin: auto;
+            font-family: 'Itim', cursive;
+            box-shadow:10px 10px 30px rgb(28, 189, 95) ;
+        }
+        body{
+            background-color: rgb(255, 130, 130);
+        }
+        h1{
+            text-align: center;
+            color: rgb(12, 112, 243);
+            font-size: 40px;
+            text-shadow:3px 5px 5px rgb(255, 255, 255);
+            font-family: 'Itim', cursive;
+        }
+        h2{
+            color: rgb(100, 214, 106);
+            text-shadow:2px 2px 4px rgb(5, 30, 99);
+            font-family: 'Itim', cursive;
+        }
+        hr{
+            box-shadow:5px 3px 5px #07f76b ;
+        }
+        input{
+            background-color: rgb(119, 167, 255);
+            border-radius:20px;
+            height: 30px;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            padding-left: 10px;
+            font-family: 'Itim', cursive;
+        }
+        p{
+            color: rgb(12, 243, 147);
+            font-size: 30px;
+            text-shadow:3px 5px 5px rgb(119, 0, 255);
+            font-family: 'Itim', cursive;
+        }
+        .menu{
+            background-color: #7e62fcd8;
+            border-radius: 50px;
+            margin: 50px;
+            padding: 20px 20px 55px;
+            width: 125px;
+            height: 30px;
+            text-align: center;
+        }
+        .menu a{
+            display: block;
+            float: center;
+            padding: 20px 10px 5px;
+            text-decoration: none;
+            transition: all 100ms ease;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-family: 'Itim', cursive;
+        }
+        .menu a:hover{
+            background-color: #ad9affd8;
+            border-radius: 50px;
+            padding: 15px;
+            height: 30px;
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        alert("สรุป MTH 102");
+    </script>
+    <div class="TriArea">
+        <h1>Triangle Area</h1>
+        <hr size="3px" noshade="" , color="#254626">
+        <h2>Base:</h2>
+        <input type="text" name="" id="base" value="10">
+        <h2>Height:</h2>
+        <input type="text" name="" id="height" value="10">
+        <p id="result"></p>
+        <script>
+            let b = document.getElementById("base");
+            let h = document.getElementById("height");
+            let area = document.getElementById("result");
+            b.addEventListener("input", triArea);
+            h.addEventListener("input", triArea);
+            function triArea(){
+                let base = parseFloat(b.value);
+                let height = parseFloat(h.value);
+                area.innerHTML = `The triangle area is ${(0.5 * base * height).toFixed(2)}`
+            }
+        </script>
+    </div>
+    <center> <div class="menu"><a href="index.html">หน้าแรก</a></div></center>
+
+</body>
+</html>
